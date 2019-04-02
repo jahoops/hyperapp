@@ -44,6 +44,7 @@
   "devDependencies": {
     "babel-plugin-transform-react-jsx": "^6.24.1",
     "babel-preset-env": "^1.7.0",
+    "http-server": "^0.11.1",
     "jest": "^23.5.0",
     "prettier": "^1.14.2",
     "rollup": "^0.65.2",
@@ -52,5 +53,8 @@
   },
   "prettier": {
     "semi": false
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
   }
 }
