@@ -6,22 +6,24 @@
     <meta charset="utf-8">
     <title>HTML5 Page</title>
     <meta name="description" content="HTML5 Page">
+    <link rel="stylesheet" href="./bootstrap431/css/bootstrap.css">
 </head>
 
 <body>
     <div id="app"></div>
 
+    <script src="./bootstrap431/js/jquery-3.3.1.js"></script>
+    <script src="./bootstrap431/js/bootstrap.bundle.js"></script>
     <script src="./src/index.js"></script>
     <script>
-        
-        var h = foo.h;
-        var app = foo.app;
+    $(function() {   
+        var h = $('#app').h;
 
-        const state = {
+        var state = {
             count: 0
         };
 
-        const actions = {
+        var actions = {
             down: value => state => ({
                 count: state.count - value
             }),
@@ -30,15 +32,16 @@
             })
         };
 
-        const view = function(state, actions){
-            h("div", {}, [
+        var view = function(state, actions){
+            return h("div", {}, [
                 h("h1", {}, state.count),
                 h("button", { onclick: () => actions.down(1) }, "-"),
                 h("button", { onclick: () => actions.up(1) }, "+")
             ])
         }
 
-        app(state, actions, view, document.getElementById(app));
+        var app = $('#app').app(state, actions, view);
+    });
     </script>
 </body>
 

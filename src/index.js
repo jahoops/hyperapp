@@ -1,5 +1,6 @@
 ;
 (function ($) {
+  
   $.fn.h = function (name, attributes) {
     "use strict";
     var rest = [];
@@ -32,7 +33,9 @@
       };
     }
   },
-  $.fn.app = function(state, actions, view, container) {
+  $.fn.app = function(state, actions, view) {
+
+    var container = this[0];
     var map = [].map;
     var rootElement = (container && container.children[0]) || null;
     var oldNode = rootElement && recycleElement(rootElement);
@@ -396,4 +399,4 @@
       return element;
     }
   };
-})(JQuery);
+})(jQuery);
