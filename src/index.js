@@ -34,7 +34,7 @@
     }
   },
   $.fn.app = function(state, actions, view) {
-
+debugger;
     var container = this[0];
     var map = [].map;
     var rootElement = (container && container.children[0]) || null;
