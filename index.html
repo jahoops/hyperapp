@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML5 Page</title>
+    <meta name="description" content="HTML5 Page">
+    <link rel="stylesheet" href="./bootstrap431/css/bootstrap.css">
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script src="./bootstrap431/js/jquery-3.3.1.js"></script>
+    <script src="./bootstrap431/js/bootstrap.bundle.js"></script>
+    <script src="./src/index.js"></script>
+    <script>
+    $(function() {   
+        var h = $('#app').h;
+
+        var state = {
+            count: 0
+        };
+
+        var actions = {
+            down: value => state => ({
+                count: state.count - value
+            }),
+            up: value => state => ({
+                count: state.count + value
+            })
+        };
+
+        var view = function(state, actions){
+            return h("div", {}, [
+                h("h1", {}, state.count),
+                h("button", { onclick: () => actions.down(1) }, "-"),
+                h("button", { onclick: () => actions.up(1) }, "+")
+            ])
+        }
+
+        var app = $('#app').app(state, actions, view);
+    });
+    </script>
+</body>
+
+</html>
